@@ -1,0 +1,44 @@
+version: '3.8'
+services:
+  mongodb:
+    image: mongo:latest
+    container_name: mongo_wallet
+    restart: always
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+  wallet-db-service:
+    build: ./wallet-db-service
+    container_name: wallet_db_service
+    restart: always
+    depends_on:
+      - mongodb
+    env_file:
+      - ./wallet-db-service/.env
+    ports:
+      - "3001:3001"
+
+  wallet-api-service:
+    build: ./wallet-api-service
+    container_name: wallet_api_service
+    restart: always
+    depends_on:
+      - wallet-db-service
+    env_file:
+      - ./wallet-api-service/.env
+    ports:
+      - "3002:3002"
+
+  frontend:
+    build: ./wallet-epayco-frontend
+    container_name: wallet-epayco-frontend
+    restart: always
+    depends_on:
+      - wallet-api-service
+    ports:
+      - "5173:5173"
+
+volumes:
+  mongo_data:
