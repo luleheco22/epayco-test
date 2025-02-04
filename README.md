@@ -29,7 +29,7 @@ El proyecto está organizado de la siguiente manera:
    cd <NOMBRE_DEL_REPOSITORIO>
 
 2. **Configurar Variables de Entorno:
- -En la carpeta backend/wallet-db-service, crea un archivo .env con las siguientes variables:
+ -En la carpeta wallet-db-service, crea un archivo .env con las siguientes variables:
 
  ```bash
  PORT=3001
@@ -43,7 +43,7 @@ El proyecto está organizado de la siguiente manera:
 
  **-Tener en cuenta que el correo que coloque debe configuarrlo la clave de aplicaciones.
 
- -En la carpeta backend/wallet-api-service, crea un archivo .env con las siguientes variables:
+ -En la carpeta wallet-api-service, crea un archivo .env con las siguientes variables:
 
  ```bash
  WALLET_SERVICE_DB_URL=http://localhost:3001
@@ -71,7 +71,7 @@ wallet-epayco-frontend: Frontend en React en el puerto 5173.
 Frontend: Abre tu navegador y visita http://localhost:5173.
 
 Servicios REST: Colección de Postman
-Puedes importar la colección de Postman desde el archivo Wallet_ePayco.postman_collection.json ubicado en la raíz del proyecto para probar los endpoints.  http://localhost:3002 (wallet-api-service). en la ruta /backend/docs
+Puedes importar la colección de Postman desde el archivo Wallet_ePayco.postman_collection.json ubicado en la raíz del proyecto para probar los endpoints.  http://localhost:3002 (wallet-api-service). en la ruta /docs
 
 
 **Detener los Contenedores
