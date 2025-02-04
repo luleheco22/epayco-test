@@ -1,0 +1,191 @@
+{
+	"info": {
+		"_postman_id": "8ed8d52c-e9ea-408e-8d00-5970001296cb",
+		"name": "Wallet-db-service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20467785"
+	},
+	"item": [
+		{
+			"name": "register customer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n{ \"document\": \"10547344\",\r\n  \"name\": \"Luis Leonel\",\r\n  \"email\": \"leonel+1@example.com\",\r\n  \"phone\": \"4129962810\",\r\n  \"password\":\"123456Test*\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3002/wallet/register-customer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3002",
+					"path": [
+						"wallet",
+						"register-customer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login customer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"leonel+1@example.com\",\r\n    \"password\": \"123456Test*\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3002/wallet/login-customer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3002",
+					"path": [
+						"wallet",
+						"login-customer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create wallet",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"document\": \"23634952\",\r\n    \"balance\": 10000,\r\n    \"phone\": \"4129962810\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3002/wallet/create-wallet",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3002",
+					"path": [
+						"wallet",
+						"create-wallet"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get balance",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "recharge wallet",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiTHVpcyBMZW9uZWwiLCJpZCI6IjY3YTAzOTdkODVjOGM2MjVjMTY4ZWViZCIsImVtYWlsIjoibGVvbmVsaGNvbnRyZXJhc0BnbWFpbC5jb20iLCJpYXQiOjE3Mzg1NTk1NTMsImV4cCI6MTczODU2MzE1M30.Junmsf1ZwSQIxfeupyVAQfmDoC6SlfJFqeCDCX7zQxQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"document\": \"12123123\",\r\n    \"balance\": 100,\r\n    \"phone\": \"4148069442\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3002/wallet/recharge-wallet",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3002",
+					"path": [
+						"wallet",
+						"recharge-wallet"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "pay",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiTHVpcyBMZW9uZWwiLCJpZCI6IjY3YTAzOTdkODVjOGM2MjVjMTY4ZWViZCIsImVtYWlsIjoibGVvbmVsaGNvbnRyZXJhc0BnbWFpbC5jb20iLCJpYXQiOjE3Mzg1NTU3NDMsImV4cCI6MTczODU1OTM0M30.hex9Bom0fsjbLvfuev2zuuw8ss2fu5NR9aOSytiLkl0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"document\": \"23634952\",\r\n    \"amount\": 500\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3002/wallet/pay",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3002",
+					"path": [
+						"wallet",
+						"pay"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "confirm payment",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
