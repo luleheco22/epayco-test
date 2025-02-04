@@ -8,9 +8,9 @@ El proyecto está organizado de la siguiente manera:
 
 ```bash
 .
-├── backend/
-│ ├── wallet-db-service/ # Servicio de acceso a la base de datos
-│ ├── wallet-api-service/ # Servicio que consume el servicio de base de datos
+├── 
+├── wallet-db-service/ # Servicio de acceso a la base de datos
+├──wallet-api-service/ # Servicio que consume el servicio de base de datos
 ├── wallet-epayco-frontend/ # Frontend en React con TypeScript
 ├── docker-compose.yml # Archivo de configuración de Docker
 
