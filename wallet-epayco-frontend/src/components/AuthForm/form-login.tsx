@@ -43,7 +43,7 @@ const FormLogin: React.FC = () => {
         onSubmit={handleLogin}
       >
         {({ values, errors, touched, handleChange, handleSubmit }) => (
-          <form className="sign-in-form" onSubmit={handleSubmit}>
+          <div className="sign-in-form">
             <div className="mb-5">
               <img alt="Logo" height={150} src="/logo_epayco.png" width={150} />
             </div>
@@ -91,12 +91,12 @@ const FormLogin: React.FC = () => {
             </div>
 
             <Button
-              className="text-white bg-green-300 hover:bg-green-400 focus:ring-4 focus:ring-blue-300 font-large rounded-lg text-sm px-5 py-2.5 me-2 mb-2"
-              type="submit"
+              className="text-white ml-16 bg-green-300 hover:bg-green-400 focus:ring-4 focus:ring-blue-300 font-large rounded-lg text-sm px-5 py-2.5 me-2 mb-2"
+              onPress={() => handleSubmit()}
             >
               {loading ? <Spinner color="primary" /> : "Login"}
             </Button>
-          </form>
+          </div>
         )}
       </Formik>
     </div>

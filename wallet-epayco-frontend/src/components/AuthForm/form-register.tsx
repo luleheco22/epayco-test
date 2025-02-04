@@ -52,141 +52,149 @@ const RegisterForm: React.FC = () => {
         onSubmit={(values, { resetForm }) => handleRegister(values, resetForm)}
       >
         {({ values, errors, touched, handleChange, handleSubmit }) => (
-          <form className="sign-up-form" onSubmit={handleSubmit}>
+          <div className="sign-up-form flex flex-col justify-center">
             <div className="mb-5">
               <img alt="Logo" height={150} src="/logo_epayco.png" width={150} />
             </div>
 
-            <div className="mb-6 w-full">
-              <Input
-                isRequired
-                className="max-w-xs"
-                errorMessage={touched.document && errors.document}
-                isInvalid={!!errors.document && !!touched.document}
-                label="Document"
-                name="document"
-                placeholder="Enter your document number"
-                type="text"
-                value={values.document}
-                variant="bordered"
-                onChange={handleChange}
-              />
-            </div>
-            <div className="mb-6 w-full">
-              <Input
-                isRequired
-                className="max-w-xs"
-                errorMessage={touched.name && errors.name}
-                isInvalid={!!errors.name && !!touched.name}
-                label="Name"
-                name="name"
-                placeholder="Enter your name"
-                type="text"
-                value={values.name}
-                variant="bordered"
-                onChange={handleChange}
-              />
-            </div>
-            <div className="mb-6 w-full">
-              <Input
-                isRequired
-                className="max-w-xs"
-                errorMessage={touched.email && errors.email}
-                isInvalid={!!errors.email && !!touched.email}
-                label="Email"
-                name="email"
-                placeholder="Enter your email"
-                type="mail"
-                value={values.email}
-                variant="bordered"
-                onChange={handleChange}
-              />
+            <div className="flex flex-wrap -mx-2">
+              <div className="w-full md:w-1/2 px-2 mb-6">
+                <Input
+                  isRequired
+                  className="max-w-xs"
+                  errorMessage={touched.document && errors.document}
+                  isInvalid={!!errors.document && !!touched.document}
+                  label="Document"
+                  name="document"
+                  placeholder="Enter your document number"
+                  type="text"
+                  value={values.document}
+                  variant="bordered"
+                  onChange={handleChange}
+                />
+              </div>
+              <div className="w-full md:w-1/2 px-2 mb-6">
+                <Input
+                  isRequired
+                  className="max-w-xs"
+                  errorMessage={touched.name && errors.name}
+                  isInvalid={!!errors.name && !!touched.name}
+                  label="Name"
+                  name="name"
+                  placeholder="Enter your name"
+                  type="text"
+                  value={values.name}
+                  variant="bordered"
+                  onChange={handleChange}
+                />
+              </div>
             </div>
 
-            <div className="mb-6 w-full">
-              <Input
-                isRequired
-                className="max-w-xs"
-                errorMessage={touched.phone && errors.phone}
-                isInvalid={!!errors.phone && !!touched.phone}
-                label="Phone"
-                name="phone"
-                placeholder="Write your phone"
-                type="text"
-                value={values.phone}
-                variant="bordered"
-                onChange={handleChange}
-              />
-            </div>
-            <div className="mb-4 w-full">
-              <Input
-                isRequired
-                className="max-w-xs"
-                endContent={
-                  <button
-                    aria-label="toggle password visibility"
-                    className="focus:outline-none"
-                    type="button"
-                    onClick={toggleVisibility}
-                  >
-                    {isVisible ? (
-                      <EyeSlashFilledIcon className="text-2xl text-default-400 pointer-events-none" />
-                    ) : (
-                      <EyeFilledIcon className="text-2xl text-default-400 pointer-events-none" />
-                    )}
-                  </button>
-                }
-                errorMessage={touched.password && errors.password}
-                isInvalid={!!errors.password && !!touched.password}
-                label="Password"
-                name="password"
-                placeholder="Ingresa tu contraseña"
-                type={isVisible ? "text" : "password"}
-                value={values.password}
-                variant="bordered"
-                onChange={handleChange}
-              />
+            <div className="flex flex-wrap -mx-2">
+              <div className="w-full md:w-1/2 px-2 mb-6">
+                <Input
+                  isRequired
+                  className="max-w-xs"
+                  errorMessage={touched.email && errors.email}
+                  isInvalid={!!errors.email && !!touched.email}
+                  label="Email"
+                  name="email"
+                  placeholder="Enter your email"
+                  type="mail"
+                  value={values.email}
+                  variant="bordered"
+                  onChange={handleChange}
+                />
+              </div>
+              <div className="w-full md:w-1/2 px-2 mb-6">
+                <Input
+                  isRequired
+                  className="max-w-xs"
+                  errorMessage={touched.phone && errors.phone}
+                  isInvalid={!!errors.phone && !!touched.phone}
+                  label="Phone"
+                  name="phone"
+                  placeholder="Write your phone"
+                  type="text"
+                  value={values.phone}
+                  variant="bordered"
+                  onChange={handleChange}
+                />
+              </div>
             </div>
 
-            <div className="mb-4 w-full">
-              <Input
-                isRequired
-                className="max-w-xs"
-                endContent={
-                  <button
-                    aria-label="toggle repeat password visibility"
-                    className="focus:outline-none"
-                    type="button"
-                    onClick={toggleVisibilityRepeat}
-                  >
-                    {isVisibleRepeat ? (
-                      <EyeSlashFilledIcon className="text-2xl text-default-400 pointer-events-none" />
-                    ) : (
-                      <EyeFilledIcon className="text-2xl text-default-400 pointer-events-none" />
-                    )}
-                  </button>
-                }
-                errorMessage={touched.confirmPassword && errors.confirmPassword}
-                isInvalid={
-                  !!errors.confirmPassword && !!touched.confirmPassword
-                }
-                label="Repeat Password"
-                name="confirmPassword"
-                placeholder="Repite tu contraseña"
-                type={isVisibleRepeat ? "text" : "password"}
-                value={values.confirmPassword}
-                variant="bordered"
-                onChange={handleChange}
-              />
+            <div className="flex flex-wrap -mx-2">
+              <div className="w-full md:w-1/2 px-2 mb-4">
+                <Input
+                  isRequired
+                  className="max-w-xs"
+                  endContent={
+                    <button
+                      aria-label="toggle password visibility"
+                      className="focus:outline-none"
+                      type="button"
+                      onClick={toggleVisibility}
+                    >
+                      {isVisible ? (
+                        <EyeSlashFilledIcon className="text-2xl text-default-400 pointer-events-none" />
+                      ) : (
+                        <EyeFilledIcon className="text-2xl text-default-400 pointer-events-none" />
+                      )}
+                    </button>
+                  }
+                  errorMessage={touched.password && errors.password}
+                  isInvalid={!!errors.password && !!touched.password}
+                  label="Password"
+                  name="password"
+                  placeholder="Ingresa tu contraseña"
+                  type={isVisible ? "text" : "password"}
+                  value={values.password}
+                  variant="bordered"
+                  onChange={handleChange}
+                />
+              </div>
+              <div className="w-full md:w-1/2 px-2 mb-4">
+                <Input
+                  isRequired
+                  className="max-w-xs"
+                  endContent={
+                    <button
+                      aria-label="toggle repeat password visibility"
+                      className="focus:outline-none"
+                      type="button"
+                      onClick={toggleVisibilityRepeat}
+                    >
+                      {isVisibleRepeat ? (
+                        <EyeSlashFilledIcon className="text-2xl text-default-400 pointer-events-none" />
+                      ) : (
+                        <EyeFilledIcon className="text-2xl text-default-400 pointer-events-none" />
+                      )}
+                    </button>
+                  }
+                  errorMessage={
+                    touched.confirmPassword && errors.confirmPassword
+                  }
+                  isInvalid={
+                    !!errors.confirmPassword && !!touched.confirmPassword
+                  }
+                  label="Repeat Password"
+                  name="confirmPassword"
+                  placeholder="Repite tu contraseña"
+                  type={isVisibleRepeat ? "text" : "password"}
+                  value={values.confirmPassword}
+                  variant="bordered"
+                  onChange={handleChange}
+                />
+              </div>
             </div>
 
             <Button
-              className="text-white bg-green-300 hover:bg-green-400 focus:ring-4 focus:ring-blue-300 font-large rounded-lg text-sm px-5 py-2.5 me-2 mb-2"
-              type="submit"
+              className="text-white text-center bg-green-300 hover:bg-green-400 focus:ring-4 focus:ring-blue-300 font-large rounded-lg text-sm px-5 py-2.5 me-2 mb-2"
+              onPress={() => handleSubmit()}
             >
-              {loading ? <Spinner color="primary" /> : "Registrarse"}
+              {loading ? <Spinner color="primary" /> : "Register"}
             </Button>
-          </form>
+          </div>
         )}
       </Formik>
     </div>
